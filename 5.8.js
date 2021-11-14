@@ -3,9 +3,11 @@ const shortestWords = (str) => {
   let wordsLength = words.map((ele) => ele.length);
   let maxIndex = Math.max(...wordsLength);
 
+  const result = [];
   for (let i = 0; i != words.length; i++) {
-    if (wordsLength[i] == maxIndex) return words[i];
+    if (wordsLength[i] == maxIndex) result.push(words[i]);
   }
+  return result;
 };
 
-console.log(shortestWords('aa aaaa aaa'));
+console.log(shortestWords('aaaa aa aaaa aaaa aaa'));
